@@ -5,7 +5,7 @@ class SearchController < ApplicationController
   def init
     @tag_values = Array.new
     @tag_names = Array.new
-    if params[:taggable_type].to_s.eql?('User')
+    if request.url.to_s.include?('search_user')
       show_on_user_map
     else
       show_on_map
